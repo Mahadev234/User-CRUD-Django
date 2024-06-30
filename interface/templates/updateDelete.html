@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <form action={{"/update/"}}{{data.id}} method="post">
+        <div class="container-fluid col-md-6">
+            <fieldset>
+                <legend>Update User</legend>
+                <div class="mb-3">
+                    {{form}}
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </fieldset>
+        </div>
+    </form>
+
+</body>
+
+</html>

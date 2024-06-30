@@ -24,18 +24,19 @@ def create_user(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
-def rud_user_details(request):
+def rud_user_details(request, uid):
     if request.method == "PUT":
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            instance = User.objects.get(id=request.data["id"])
+            instance = User.objects.get(id=uid)
+            print(instance)
             serializer.update(instance, request.data)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == "GET":
-        user = User.objects.get(id=request.data["id"])
+        user = User.objects.get(id=uid)
         if user:
             serializer = UserSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
