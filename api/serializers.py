@@ -15,5 +15,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             "firstname",
             "lastname",
             "phone",
-            "joined_date",
         )
