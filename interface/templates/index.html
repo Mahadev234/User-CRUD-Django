@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -30,12 +30,11 @@
                     <td>{{ user.phone }}</td>
                     <td>
                         <div class="btn-group mx-2" role="group" aria-label="Update and Delete">
-                            <a href={{"/update/"}}{{user.id}}>
-                                <button type="button" class="btn btn-outline-warning">Update</button>
+                            <a href={{"/update/"}}{{user.id}} class="btn btn-outline-warning">
+                                Update
                             </a>
                             <form action={{"/delete/"}}{{user.id}} method="post">
                                 <input type="submit" value="Remove" class="btn btn-outline-danger">
-                                <!-- <button type="button" class="">Remove</button> -->
                             </form>
                         </div>
                     </td>
@@ -48,7 +47,9 @@
             <div class="card-body">
                 <h5 class="card-title">No Users Found</h5>
                 <p class="card-text">Click the below button to Add New Users or Click add user on NavBar </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a class="btn btn-outline-primary" href="http://127.0.0.1:8000/add/">
+                    Add User +
+                </a>
             </div>
         </div>
         {% endif %}
