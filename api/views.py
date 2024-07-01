@@ -44,7 +44,7 @@ def rud_user_details(request, uid):
             return Response("User not found", status=status.HTTP_404_NOT_FOUND)
 
     elif request.method == "DELETE":
-        user = User.objects.get(id=request.data["id"])
+        user = User.objects.get(id=uid)
         if user:
             user.delete()
             return Response("User deleted", status=status.HTTP_200_OK)

@@ -10,9 +10,11 @@
 <body>
     {% include 'navbar.html' %}
     <div class="container my-5 col-6">
+        {% if users %}
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">#</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Phone</th>
@@ -31,15 +33,25 @@
                             <a href={{"/update/"}}{{user.id}}>
                                 <button type="button" class="btn btn-outline-warning">Update</button>
                             </a>
-                            <a href="">
-                                <button type="button" class="btn btn-outline-danger">Remove</button>
-                            </a>
+                            <form action={{"/delete/"}}{{user.id}} method="post">
+                                <input type="submit" value="Remove" class="btn btn-outline-danger">
+                                <!-- <button type="button" class="">Remove</button> -->
+                            </form>
                         </div>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">No Users Found</h5>
+                <p class="card-text">Click the below button to Add New Users or Click add user on NavBar </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 
 </body>

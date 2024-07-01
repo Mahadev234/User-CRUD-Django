@@ -50,7 +50,7 @@ def add_user(request):
 
 
 @api_view(["GET", "POST"])
-def update(request, id):
+def update_user(request, id):
     data = requests.get(f"http://127.0.0.1:8000/api/users/{id}").json()
     if request.method == "GET":
         template = loader.get_template("updateDelete.html")
@@ -62,3 +62,10 @@ def update(request, id):
         ).json()
         context = {"message": "User updated successfully"}
         return render(request, "status.html", context)
+
+
+@api_view(["POST"])
+def delete_user(request, id):
+    data = requests.delete(f"http://127.0.0.1:8000/api/users/{id}").json()
+    context = {"message": "User deleted successfully"}
+    return render(request, "status.html", context)
