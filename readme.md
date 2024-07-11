@@ -50,3 +50,47 @@ Make sure to replace `{user_id}` with the actual ID of the user you want to perf
 
 For more information on how to use the API endpoints, please refer to the API documentation.
 
+#### Running with Docker
+
+To run the project using Docker, follow these steps:
+
+##### Linux and macOS
+
+1. Install Docker on your system if you haven't already.
+
+2. Open a terminal and navigate to the project directory.
+
+3. Build the Docker image:
+
+```
+docker build -t user-crud-django .
+```
+
+4. Run the Docker container:
+
+```
+docker run -p 8000:8000 user-crud-django
+```
+
+5. Access the application in your browser at `http://localhost:8000`.
+
+##### Windows
+
+1. Install Docker Desktop on your system if you haven't already.
+
+2. Open a command prompt and navigate to the project directory.
+
+3. Build the Docker image:
+
+```
+docker build -t user-crud-django .
+```
+
+4. Run the Docker container:
+
+```
+docker run -p 8000:8000 user-crud-django
+```
+
+5. Access the application in your browser at `http://localhost:8000`.
+
