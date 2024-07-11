@@ -79,11 +79,11 @@ WSGI_APPLICATION = "user_crud.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("PGDATABASE"),
-        "USER": os.environ.get("PGUSER"),
-        "PASSWORD": os.environ.get("PGPASSWORD"),
-        "HOST": os.environ.get("PGHOST"),
-        "PORT": os.environ.get("PGPORT"),
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "JvEllUsOUOMFoSzJbjaGwWHMaMLjtGfd",
+        "HOST": "viaduct.proxy.rlwy.net",
+        "PORT": "20925",
     }
 }
 # Password validation
