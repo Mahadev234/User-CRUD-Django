@@ -10,9 +10,9 @@ services:
       - "8000:8000"
     environment:
       PGDATABASE: railway
-      PGHOST: yourhost
-      PGPASSWORD: yourpassword
-      PGPORT: yourport
+      PGHOST: viaduct.proxy.rlwy.net
+      PGPASSWORD: JvEllUsOUOMFoSzJbjaGwWHMaMLjtGfd
+      PGPORT: 20925
       PGUSER: postgres
     networks:
       - user_crud_network
